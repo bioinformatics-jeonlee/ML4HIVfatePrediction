@@ -1,2 +1,10 @@
-# ML4HIVfatePrediction
-Machine Learning for HIV expression level prediction
+# Machine Learning for HIV expression level prediction
+Machine Learning Approach to Train a Model Predicting HIV Expression Levels
+To predict features and guide experimental approaches to clinical analysis, a machine learning approach was used to train a logistic regression model for HIV expression prediction. We examined 2-kb regions in 200 bp increments around integration sites (Fig. 1A). When a threshold of information value (IV) ≥ 2 was applied, 26 features were determined as optimal features for the prediction task, which include all 20 Lamin bins, 5 bins in H3K27ac, and 1 bin in MNase-seq. For the test dataset, HIV expression levels were predicted through the logistic regression model of the optimal features, their estimated weights and corresponding odds ratios, and the standard errors of the estimated weights were obtained. Notably, the evaluation metrics were calculated as 68.42% of sensitivity, 59.10% of specificity and 64.71% of AUROC, confirming that the model has decent prediction power (Fig. 1B). The predicted HIV expression values for the ‘High’ expression category were found significantly higher than those for the ‘Low’ category (P=.00025). Meanwhile, the predicted values for the ‘Intermediate’ and ‘Low’ categories showed not significant difference (P=.27; Fig. 1C). Furthermore, the actual and predicted HIV expression values were found to have a positive, moderate correlation (R=0.19, P=.00018; Fig. 1D).
+
+ ![image](https://github.com/user-attachments/assets/b34fad8e-3c52-4e76-9bdd-22ca0e2b90ee)
+
+Figure 1. HIV expression level prediction based on surrounding genetic landscape. (A) Schematic of data integration and training of the machine learning model. Genetic marks 2 kb surrounding B-HIVE insertions were binned every 200 bp and measured. B-HIVE data was split into 3 groups (low, intermediate, and high), training the model for low versus high. (B) The trained model’s AUROC (Area Under the Receiver Operating Characteristics) curve. (C) Predicted HIV expression comparison among three categories of Low, Intermediate, and High. (D) Linear regression and correlation plot between the actual and predicted HIV expression values.
+
+## Full paper
+Ruess H, Lee J, Guzman C, Malladi VS, D’Orso I. Decoding Human Genome Regulatory Features That Influence HIV-1 Proviral Expression and Fate Through an Integrated Genomics Approach. Bioinformatics and Biology Insights. 2022;16. doi:10.1177/11779322211072333
